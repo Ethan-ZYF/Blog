@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"ethan-zyf.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="https://ethan-zyf.github.io/tags/index.html">
+  <meta name="description" content="What is a Binary Search Tree  Binary Search Tree is a node-based binary tree data structure which has the following properties:  The left subtree of a node contains only nodes with keys lesser than th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Binary Search Tree">
+<meta property="og:url" content="https://ethan-zyf.github.io/2022/02/01/Binary-Search-Tree-1/index.html">
 <meta property="og:site_name" content="FanBlog">
+<meta property="og:description" content="What is a Binary Search Tree  Binary Search Tree is a node-based binary tree data structure which has the following properties:  The left subtree of a node contains only nodes with keys lesser than th">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-01T20:03:37.099Z">
-<meta property="article:modified_time" content="2022-02-01T20:03:37.099Z">
+<meta property="article:published_time" content="2022-02-01T22:06:04.000Z">
+<meta property="article:modified_time" content="2022-02-01T23:51:54.527Z">
 <meta property="article:author" content="Yifan Zhao">
+<meta property="article:tag" content="Data Structures">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://ethan-zyf.github.io/tags/">
+<link rel="canonical" href="https://ethan-zyf.github.io/2022/02/01/Binary-Search-Tree-1/">
 
 
 <script id="page-configurations">
@@ -38,13 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tags | FanBlog
-</title>
+  <title>Binary Search Tree | FanBlog</title>
   
 
 
@@ -155,51 +157,117 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="en">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ethan-zyf.github.io/2022/02/01/Binary-Search-Tree-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yifan Zhao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FanBlog">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Binary Search Tree
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">Tags
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
 
-<div class="post-meta">
+              <time title="Created: 2022-02-01 17:06:04 / Modified: 18:51:54" itemprop="dateCreated datePublished" datetime="2022-02-01T17:06:04-05:00">2022-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="what-is-a-binary-search-tree">What is a Binary Search Tree</h2>
+<ul>
+<li>Binary Search Tree is a node-based binary tree data structure which
+has the following properties:
+<ul>
+<li>The left subtree of a node contains only nodes with keys lesser than
+the node’s key.</li>
+<li>The right subtree of a node contains only nodes with keys greater
+than the node’s key.</li>
+<li>The left and right subtree each must also be a binary search
+tree.</li>
+</ul>
+<img
+src="https://media.geeksforgeeks.org/wp-content/uploads/BSTSearch.png" /></li>
+</ul>
+<h2 id="create-a-new-binary-search-tree">Create a new Binary Search
+Tree</h2>
+<ul>
+<li>We need to store the root value and the reference to the left and
+right child. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> val;</span><br><span class="line">    <span class="keyword">public</span> TreeNode left;</span><br><span class="line">    <span class="keyword">public</span> TreeNode right;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TreeNode</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TreeNode</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123; <span class="keyword">this</span>.val = val; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TreeNode</span><span class="params">(<span class="keyword">int</span> val, TreeNode left, TreeNode right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.val = val;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="insert-and-search-of-binary-search-tree">Insert and Search of
+Binary Search Tree</h2>
+<ul>
+<li>Insert:</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Data-Structures/" rel="tag"># Data Structures</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/01/Heap/" rel="prev" title="Heap">
+      <i class="fa fa-chevron-left"></i> Heap
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              2 tags in total
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Data-Structures/" style="font-size: 30px; color: #111">Data Structures</a> <a href="/tags/Number-Theory/" style="font-size: 12px; color: #ccc">Number Theory</a>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -250,6 +318,9 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#what-is-a-binary-search-tree"><span class="nav-number">1.</span> <span class="nav-text">What is a Binary Search Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-a-new-binary-search-tree"><span class="nav-number">2.</span> <span class="nav-text">Create a new Binary Search
+Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#insert-and-search-of-binary-search-tree"><span class="nav-number">3.</span> <span class="nav-text">Insert and Search of
+Binary Search Tree</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
