@@ -28,7 +28,7 @@
 <meta property="og:description" content="Happy Number  My solution by recursion class Solution &amp;#123;    public boolean isHappy(int n) &amp;#123;        if(n &#x3D;&#x3D; 1)&amp;#123;            return true;        &amp;#125;        if(n &#x3D;&#x3D; 4)&amp;#123;            re">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-16T16:46:12.000Z">
-<meta property="article:modified_time" content="2022-02-16T17:04:21.606Z">
+<meta property="article:modified_time" content="2022-02-20T21:08:41.095Z">
 <meta property="article:author" content="Yifan Zhao">
 <meta property="article:tag" content="Algorithms">
 <meta name="twitter:card" content="summary">
@@ -192,10 +192,16 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-02-16 11:46:12 / Modified: 12:04:21" itemprop="dateCreated datePublished" datetime="2022-02-16T11:46:12-05:00">2022-02-16</time>
+              <time title="Created: 2022-02-16 11:46:12" itemprop="dateCreated datePublished" datetime="2022-02-16T11:46:12-05:00">2022-02-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 16:08:41" itemprop="dateModified" datetime="2022-02-20T16:08:41-05:00">2022-02-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -224,7 +230,18 @@ Number</a></h1>
 <li><p>My solution by recursion</p>
 <p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">4</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(n &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                res += (n%<span class="number">10</span>) * (n%<span class="number">10</span>);</span><br><span class="line">                n /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> isHappy(res);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
 <li><p>Solution by fast and slow pointers</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">squareSum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">          <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">              <span class="keyword">while</span>(n &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                  res += (n%<span class="number">10</span>) * (n%<span class="number">10</span>);</span><br><span class="line">                  n /= <span class="number">10</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          <span class="keyword">return</span> res;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">          <span class="keyword">int</span> fast= n, slow = n;</span><br><span class="line">          <span class="keyword">do</span>&#123;</span><br><span class="line">              fast = squareSum(fast);</span><br><span class="line">              fast = squareSum(fast);</span><br><span class="line">              slow = squareSum(slow);</span><br><span class="line">          &#125;<span class="keyword">while</span>(fast != slow);</span><br><span class="line">          <span class="keyword">return</span> fast == <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<p>class Solution { public int squareSum(int n){ int res = 0; while(n
+&gt; 0){ res += (n%10) * (n%10); n /= 10; } return res; }</p>
+<pre><code>  public boolean isHappy(int n) &#123;
+      int fast= n, slow = n;
+      do&#123;
+          fast = squareSum(fast);
+          fast = squareSum(fast);
+          slow = squareSum(slow);
+      &#125;while(fast != slow);
+      return fast == 1;
+  &#125;</code></pre>
+<p>} ```</p></li>
 </ul>
 
     </div>
