@@ -276,6 +276,155 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ethan-zyf.github.io/2022/03/19/Socket/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yifan Zhao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FanBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/19/Socket/" class="post-title-link" itemprop="url">Socket</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-03-19 15:07:01 / Modified: 22:22:18" itemprop="dateCreated datePublished" datetime="2022-03-19T15:07:01-04:00">2022-03-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>We can communicate between process by pipe and fork. However, there
+is a restriction that we can only communicate processes in the same
+machine. Now, there is a new method called socket that communicate
+different machine.</p>
+<h1 id="basic-computer-network-background">Basic Computer Network
+Background</h1>
+<ul>
+<li>Each machine has an internet protocol address (IP address). This
+address can be used to send to any machine connected to the
+internet.</li>
+<li>Although a machine might have only one IP address, it might be
+running lots of different programs that need to communicate over the
+internet. Messages sent across the internet are destined for a
+particular program. So we need more than just the machine to specify
+which program.</li>
+<li>That's what PORTS are for. If a machine's address is like a street
+address, then a port is like an apartment number in the building at that
+address.<br />
+The full location of a program running on a machine connected to the
+internet is its machine address plus the port. <img
+src="/2022/03/19/Socket/port.png" alt="port" /></li>
+<li>Messages sent from one machine are enclosed in packets.</li>
+<li>They contain both the address and a payload -- the contents of the
+packet or package. However, the packet does not specify the route that
+travel to get to the destination.</li>
+<li>When the packet leaves the machine, it is received by another
+device, called a router, that facilitates transfer of packets between
+networks.</li>
+<li>Routers are connected to multiple networks and know which network
+the packet should be sent to in order to get it closer to its final
+destination. That machine looks at the final destination and sends the
+packet onto the next stage of its journey.</li>
+<li>A server is a machine that running many program that can be accessed
+by some client.</li>
+<li>If some client want access a program on the server need to send a
+message with the IP address and port.</li>
+</ul>
+<h1 id="type-of-socket">Type of socket</h1>
+<ul>
+<li>Datagram sockets</li>
+<li>Stream sockets</li>
+<li>Raw sockets</li>
+<li>other</li>
+</ul>
+<h2 id="stream-sockettcp">Stream socket(TCP)</h2>
+<ul>
+<li>connection-oriented sockets</li>
+<li>no loss guaranteed</li>
+<li>in-order delivery</li>
+<li>prototype: <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">socket</span><span class="params">(<span class="keyword">int</span> domain, <span class="keyword">int</span> type, <span class="keyword">int</span> protocol)</span></span>;</span><br><span class="line"><span class="comment">// domain: PF_INET or AF_INET</span></span><br><span class="line"><span class="comment">// type: SOCK_STREAM</span></span><br><span class="line"><span class="comment">// protocol: 0 (default protocol)</span></span><br><span class="line"><span class="comment">// return a file descriptor</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="socket-configuration">Socket Configuration</h3>
+<ul>
+<li><p>We will use the bind system call</p></li>
+<li><p>prototype:</p>
+<p><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bind</span><span class="params">(listen_soc, <span class="keyword">const</span> struct sockaddr *address, <span class="keyword">socklen_t</span> address_len)</span></span>;</span><br><span class="line"><span class="comment">// we use struct sockaddr_in</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>port number are 0-65535</p>
+<table>
+<thead>
+<tr class="header">
+<th>numbers</th>
+<th>usage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0-1023</td>
+<td>well-reserved ports</td>
+</tr>
+<tr class="even">
+<td>1024-49151</td>
+<td>registered ports</td>
+</tr>
+<tr class="odd">
+<td>49152-65535</td>
+<td>dynamic ports</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>If you are use a shared machine, avoid use same port to other
+user.</p></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://ethan-zyf.github.io/2022/02/26/Trie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1036,89 +1185,11 @@ target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/">geeksforgee
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ethan-zyf.github.io/2022/01/30/Number-Theory-Notes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yifan Zhao">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FanBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/30/Number-Theory-Notes/" class="post-title-link" itemprop="url">Number Theory</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-30 19:33:50" itemprop="dateCreated datePublished" datetime="2022-01-30T19:33:50-05:00">2022-01-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-19 15:05:12" itemprop="dateModified" datetime="2022-03-19T15:05:12-04:00">2022-03-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="divisibility">Divisibility</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/30/Number-Theory-Notes/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -1183,7 +1254,7 @@ target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/">geeksforgee
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1196,7 +1267,7 @@ target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/">geeksforgee
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
