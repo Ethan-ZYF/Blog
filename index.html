@@ -276,6 +276,70 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ethan-zyf.github.io/2022/08/21/Beautiful-Codes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yifan Zhao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FanBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/08/21/Beautiful-Codes/" class="post-title-link" itemprop="url">Beautiful Codes</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-08-21 00:11:45 / Modified: 00:14:49" itemprop="dateCreated datePublished" datetime="2022-08-21T00:11:45-04:00">2022-08-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="find-the-k-sum-of-an-array">Find the K-Sum of an Array</h2>
+<h3 id="problem-link"><a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/find-the-k-sum-of-an-array/">Problem
+Link</a></h3>
+<h3 id="code-by-pathetic-dog">Code by Pathetic Dog</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">kSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        total = <span class="built_in">sum</span>(<span class="built_in">max</span>(<span class="number">0</span>, num) <span class="keyword">for</span> num <span class="keyword">in</span> nums)</span><br><span class="line"></span><br><span class="line">        pos = <span class="built_in">sorted</span>([<span class="built_in">abs</span>(num) <span class="keyword">for</span> num <span class="keyword">in</span> nums])</span><br><span class="line">        s, heap = <span class="number">0</span>, [(pos[<span class="number">0</span>], <span class="number">0</span>)]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(k - <span class="number">1</span>):</span><br><span class="line">            s, i = heappop(heap)</span><br><span class="line">            <span class="keyword">if</span> i + <span class="number">1</span> &lt; <span class="built_in">len</span>(nums):</span><br><span class="line">                heappush(heap, (s - pos[i] + pos[i + <span class="number">1</span>], i + <span class="number">1</span>))</span><br><span class="line">                heappush(heap, (s + pos[i + <span class="number">1</span>], i + <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> total - s</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://ethan-zyf.github.io/2022/06/19/Prime-Sieve/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1098,100 +1162,6 @@ Therefore, we need a strategy.
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ethan-zyf.github.io/2022/02/09/KMP-Algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yifan Zhao">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FanBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/09/KMP-Algorithm/" class="post-title-link" itemprop="url">KMP Algorithm</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-09 08:32:53" itemprop="dateCreated datePublished" datetime="2022-02-09T08:32:53-05:00">2022-02-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-19 15:05:25" itemprop="dateModified" datetime="2022-03-19T15:05:25-04:00">2022-03-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="example">Example</h2>
-<ul>
-<li><p>There are two strings:</p>
-<ul>
-<li>T = <code>abaacababcac</code></li>
-<li>P = <code>ababc</code></li>
-</ul></li>
-<li><p>We have to find the substring in T that equals P.</p></li>
-<li><p>Normally we traverse both strings which cost <span
-class="math inline">\(O(mn)\)</span> time complexity where <span
-class="math inline">\(m\)</span> and <span
-class="math inline">\(n\)</span> are the length of two strings.</p></li>
-<li><p>We can use an algorithm called KMP algorithm to solve the
-problem.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/02/09/KMP-Algorithm/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1261,7 +1231,7 @@ problem.
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

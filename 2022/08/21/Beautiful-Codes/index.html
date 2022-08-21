@@ -20,20 +20,19 @@
     var CONFIG = {"hostname":"ethan-zyf.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="We can communicate between process by pipe and fork. However, there is a restriction that we can only communicate processes in the same machine. Now, there is a new method called socket that communica">
+  <meta name="description" content="Find the K-Sum of an Array Problem Link Code by Pathetic Dog class Solution:    def kSum(self, nums: List[int], k: int) -&gt; int:        total &#x3D; sum(max(0, num) for num in nums)        pos &#x3D; sorted([">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Socket">
-<meta property="og:url" content="https://ethan-zyf.github.io/2022/03/19/Socket/index.html">
+<meta property="og:title" content="Beautiful Codes">
+<meta property="og:url" content="https://ethan-zyf.github.io/2022/08/21/Beautiful-Codes/index.html">
 <meta property="og:site_name" content="FanBlog">
-<meta property="og:description" content="We can communicate between process by pipe and fork. However, there is a restriction that we can only communicate processes in the same machine. Now, there is a new method called socket that communica">
+<meta property="og:description" content="Find the K-Sum of an Array Problem Link Code by Pathetic Dog class Solution:    def kSum(self, nums: List[int], k: int) -&gt; int:        total &#x3D; sum(max(0, num) for num in nums)        pos &#x3D; sorted([">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-19T19:07:01.000Z">
-<meta property="article:modified_time" content="2022-03-20T02:22:18.843Z">
+<meta property="article:published_time" content="2022-08-21T04:11:45.000Z">
+<meta property="article:modified_time" content="2022-08-21T04:14:49.865Z">
 <meta property="article:author" content="Yifan Zhao">
-<meta property="article:tag" content="System Programming">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://ethan-zyf.github.io/2022/03/19/Socket/">
+<link rel="canonical" href="https://ethan-zyf.github.io/2022/08/21/Beautiful-Codes/">
 
 
 <script id="page-configurations">
@@ -46,7 +45,7 @@
   };
 </script>
 
-  <title>Socket | FanBlog</title>
+  <title>Beautiful Codes | FanBlog</title>
   
 
 
@@ -170,7 +169,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ethan-zyf.github.io/2022/03/19/Socket/">
+    <link itemprop="mainEntityOfPage" href="https://ethan-zyf.github.io/2022/08/21/Beautiful-Codes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -183,7 +182,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Socket
+          Beautiful Codes
         </h1>
 
         <div class="post-meta">
@@ -194,16 +193,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-03-19 15:07:01 / Modified: 22:22:18" itemprop="dateCreated datePublished" datetime="2022-03-19T15:07:01-04:00">2022-03-19</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
-                </span>
+              <time title="Created: 2022-08-21 00:11:45 / Modified: 00:14:49" itemprop="dateCreated datePublished" datetime="2022-08-21T00:11:45-04:00">2022-08-21</time>
             </span>
 
           
@@ -217,88 +207,12 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>We can communicate between process by pipe and fork. However, there
-is a restriction that we can only communicate processes in the same
-machine. Now, there is a new method called socket that communicate
-different machine.</p>
-<h1 id="basic-computer-network-background">Basic Computer Network
-Background</h1>
-<ul>
-<li>Each machine has an internet protocol address (IP address). This
-address can be used to send to any machine connected to the
-internet.</li>
-<li>Although a machine might have only one IP address, it might be
-running lots of different programs that need to communicate over the
-internet. Messages sent across the internet are destined for a
-particular program. So we need more than just the machine to specify
-which program.</li>
-<li>That's what PORTS are for. If a machine's address is like a street
-address, then a port is like an apartment number in the building at that
-address.<br />
-The full location of a program running on a machine connected to the
-internet is its machine address plus the port. <img
-src="/2022/03/19/Socket/port.png" alt="port" /></li>
-<li>Messages sent from one machine are enclosed in packets.</li>
-<li>They contain both the address and a payload -- the contents of the
-packet or package. However, the packet does not specify the route that
-travel to get to the destination.</li>
-<li>When the packet leaves the machine, it is received by another
-device, called a router, that facilitates transfer of packets between
-networks.</li>
-<li>Routers are connected to multiple networks and know which network
-the packet should be sent to in order to get it closer to its final
-destination. That machine looks at the final destination and sends the
-packet onto the next stage of its journey.</li>
-<li>A server is a machine that running many program that can be accessed
-by some client.</li>
-<li>If some client want access a program on the server need to send a
-message with the IP address and port.</li>
-</ul>
-<h1 id="type-of-socket">Type of socket</h1>
-<ul>
-<li>Datagram sockets</li>
-<li>Stream sockets</li>
-<li>Raw sockets</li>
-<li>other</li>
-</ul>
-<h2 id="stream-sockettcp">Stream socket(TCP)</h2>
-<ul>
-<li>connection-oriented sockets</li>
-<li>no loss guaranteed</li>
-<li>in-order delivery</li>
-<li>prototype: <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">socket</span><span class="params">(<span class="keyword">int</span> domain, <span class="keyword">int</span> type, <span class="keyword">int</span> protocol)</span></span>;</span><br><span class="line"><span class="comment">// domain: PF_INET or AF_INET</span></span><br><span class="line"><span class="comment">// type: SOCK_STREAM</span></span><br><span class="line"><span class="comment">// protocol: 0 (default protocol)</span></span><br><span class="line"><span class="comment">// return a file descriptor</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="socket-configuration">Socket Configuration</h3>
-<ul>
-<li><p>We will use the bind system call</p></li>
-<li><p>prototype:</p>
-<p><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bind</span><span class="params">(listen_soc, <span class="keyword">const</span> struct sockaddr *address, <span class="keyword">socklen_t</span> address_len)</span></span>;</span><br><span class="line"><span class="comment">// we use struct sockaddr_in</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>port number are 0-65535</p>
-<table>
-<thead>
-<tr class="header">
-<th>numbers</th>
-<th>usage</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0-1023</td>
-<td>well-reserved ports</td>
-</tr>
-<tr class="even">
-<td>1024-49151</td>
-<td>registered ports</td>
-</tr>
-<tr class="odd">
-<td>49152-65535</td>
-<td>dynamic ports</td>
-</tr>
-</tbody>
-</table></li>
-<li><p>If you are use a shared machine, avoid use same port to other
-user.</p></li>
-</ul>
+        <h2 id="find-the-k-sum-of-an-array">Find the K-Sum of an Array</h2>
+<h3 id="problem-link"><a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/find-the-k-sum-of-an-array/">Problem
+Link</a></h3>
+<h3 id="code-by-pathetic-dog">Code by Pathetic Dog</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">kSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        total = <span class="built_in">sum</span>(<span class="built_in">max</span>(<span class="number">0</span>, num) <span class="keyword">for</span> num <span class="keyword">in</span> nums)</span><br><span class="line"></span><br><span class="line">        pos = <span class="built_in">sorted</span>([<span class="built_in">abs</span>(num) <span class="keyword">for</span> num <span class="keyword">in</span> nums])</span><br><span class="line">        s, heap = <span class="number">0</span>, [(pos[<span class="number">0</span>], <span class="number">0</span>)]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(k - <span class="number">1</span>):</span><br><span class="line">            s, i = heappop(heap)</span><br><span class="line">            <span class="keyword">if</span> i + <span class="number">1</span> &lt; <span class="built_in">len</span>(nums):</span><br><span class="line">                heappush(heap, (s - pos[i] + pos[i + <span class="number">1</span>], i + <span class="number">1</span>))</span><br><span class="line">                heappush(heap, (s + pos[i + <span class="number">1</span>], i + <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> total - s</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -307,9 +221,6 @@ user.</p></li>
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/System-Programming/" rel="tag"># System Programming</a>
-          </div>
 
         
 
@@ -317,13 +228,10 @@ user.</p></li>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/02/26/Trie/" rel="prev" title="Trie">
-      <i class="fa fa-chevron-left"></i> Trie
+    <a href="/2022/06/19/Prime-Sieve/" rel="prev" title="Prime Sieve">
+      <i class="fa fa-chevron-left"></i> Prime Sieve
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/06/03/Segment-Tree/" rel="next" title="Segment Tree">
-      Segment Tree <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -382,8 +290,8 @@ user.</p></li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-computer-network-background"><span class="nav-number">1.</span> <span class="nav-text">Basic Computer Network
-Background</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#type-of-socket"><span class="nav-number">2.</span> <span class="nav-text">Type of socket</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stream-sockettcp"><span class="nav-number">2.1.</span> <span class="nav-text">Stream socket(TCP)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#socket-configuration"><span class="nav-number">2.1.1.</span> <span class="nav-text">Socket Configuration</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#find-the-k-sum-of-an-array"><span class="nav-number">1.</span> <span class="nav-text">Find the K-Sum of an Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#problem-link"><span class="nav-number">1.1.</span> <span class="nav-text">Problem
+Link</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#code-by-pathetic-dog"><span class="nav-number">1.2.</span> <span class="nav-text">Code by Pathetic Dog</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
